@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "spring.dubbo")
 @Setter
-public class DubboConfig {
+public class DubboProviderConfig {
     private int timeout;
     @Bean
     public ProviderConfig providerConfig(){
