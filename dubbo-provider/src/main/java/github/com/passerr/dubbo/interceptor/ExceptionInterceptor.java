@@ -4,17 +4,16 @@ import github.com.passerr.dubbo.exception.DubboException;
 import github.com.passerr.dubbo.vo.ResponseVo;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
 
 /**
+ * {@link com.alibaba.dubbo.config.annotation.Service}使用代理后有bug<BR/>
+ * 使用{@link com.alibaba.dubbo.rpc.Filter}代替{@link github.com.passerr.dubbo.filter.DubboExceptionFilter}
  * @author xiehai1
  * @date 2017/08/31 15:38
  * @Copyright(c) gome inc Gome Co.,LTD
  */
 @Slf4j
-@Aspect
-@Component
+@Deprecated
 public class ExceptionInterceptor {
 //    @Around("execution(* github.com.passerr.dubbo.api.impl..*(..))")
     public Object intercept(ProceedingJoinPoint proceedingJoinPoint) {
