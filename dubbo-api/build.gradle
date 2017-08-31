@@ -1,0 +1,10 @@
+group 'github.com.passerr'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+dependencies {
+    compile "javax.validation:validation-api:2.0.0.Final"
+    compile "org.hibernate:hibernate-validator:6.0.2.Final"
+    compileOnly "org.projectlombok:lombok:$LombokVersion"
+}
