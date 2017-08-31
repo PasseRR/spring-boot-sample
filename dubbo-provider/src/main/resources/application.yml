@@ -1,3 +1,7 @@
+server:
+  # 端口
+  port: 81
+
 spring:
   dubbo:
     appname: dubbo-provider
