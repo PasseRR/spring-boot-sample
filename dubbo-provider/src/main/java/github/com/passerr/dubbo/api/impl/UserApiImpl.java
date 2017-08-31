@@ -2,6 +2,7 @@ package github.com.passerr.dubbo.api.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import github.com.passerr.dubbo.api.UserApi;
+import github.com.passerr.dubbo.exception.DubboException;
 import github.com.passerr.dubbo.vo.ResponseVo;
 import github.com.passerr.dubbo.vo.UserVo;
 import org.springframework.stereotype.Component;
@@ -28,6 +29,10 @@ public class UserApiImpl implements UserApi {
 
     @Override
     public ResponseVo<BigInteger> deleteUser(BigInteger userId) {
+        if(new BigInteger("1").compareTo(userId) == 0){
+            throw new DubboException("01", "超级用户不能删除!");
+        }
+
         return ResponseVo.ok(userId);
     }
 }

@@ -9,6 +9,7 @@ dependencies {
     compile project(':dubbo-api')
 
     compile "org.springframework.boot:spring-boot-starter-web:$SpringBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-aop:$SpringBootVersion"
     compile("com.alibaba:dubbo:$DubboVersion") {
         exclude group: "org.springframework"
     }
