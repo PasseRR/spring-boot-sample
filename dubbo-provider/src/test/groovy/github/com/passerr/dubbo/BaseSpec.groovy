@@ -1,5 +1,6 @@
 package github.com.passerr.dubbo
 
+import org.slf4j.LoggerFactory
 import org.springframework.boot.test.context.ConfigFileApplicationContextInitializer
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.web.WebAppConfiguration
@@ -12,4 +13,5 @@ import spock.lang.Specification
 @WebAppConfiguration
 @ContextConfiguration(classes = DubboProviderApplication.class, initializers = ConfigFileApplicationContextInitializer.class)
 class BaseSpec extends Specification {
+    def logger = LoggerFactory.getLogger(BaseSpec.class)
 }

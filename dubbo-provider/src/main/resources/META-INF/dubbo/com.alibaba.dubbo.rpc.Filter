@@ -1,2 +1,4 @@
+# 参数校验filter
+validationFilter=github.com.passerr.dubbo.filter.ValidationFilter
 # 异常filter
 exceptionFilter=github.com.passerr.dubbo.filter.DubboExceptionFilter

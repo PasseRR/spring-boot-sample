@@ -21,7 +21,7 @@ public class DubboProviderConfig {
         ProviderConfig providerConfig = new ProviderConfig();
         // 设置provider统一超时
         providerConfig.setTimeout(this.timeout);
-        providerConfig.setFilter("exceptionFilter");
+        providerConfig.setFilter("validationFilter,exceptionFilter");
         return providerConfig;
     }
 }

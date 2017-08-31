@@ -30,7 +30,7 @@ public class UserApiImpl implements UserApi {
     @Override
     public ResponseVo<BigInteger> deleteUser(BigInteger userId) {
         if(new BigInteger("1").compareTo(userId) == 0){
-            throw new DubboException("01", "超级用户不能删除!");
+            throw new DubboException("02", "超级用户不能删除!");
         }
 
         return ResponseVo.ok(userId);
