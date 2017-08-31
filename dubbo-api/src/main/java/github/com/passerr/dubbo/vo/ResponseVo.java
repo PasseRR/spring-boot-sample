@@ -1,7 +1,9 @@
 package github.com.passerr.dubbo.vo;
 
+import github.com.passerr.dubbo.exception.DubboException;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.ToString;
 
 /**
  * @author xiehai1
@@ -10,6 +12,7 @@ import lombok.Getter;
  */
 @Builder
 @Getter
+@ToString
 public class ResponseVo<T> extends BaseVo {
     private boolean isOk;
     private String responseCode;
@@ -29,6 +32,14 @@ public class ResponseVo<T> extends BaseVo {
             .isOk(false)
             .responseCode(responseCode)
             .responseMessage(responseMessage)
+            .build();
+    }
+
+    public static ResponseVo fail(DubboException exception){
+        return ResponseVo.builder()
+            .isOk(false)
+            .responseCode(exception.getCode())
+            .responseMessage(exception.getMessage())
             .build();
     }
 }

@@ -1,7 +1,6 @@
 package github.com.passerr.dubbo.vo;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.math.BigInteger;
 
@@ -11,7 +10,6 @@ import java.math.BigInteger;
  * @Copyright(c) gome inc Gome Co.,LTD
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class UserVo extends BaseVo{
     private BigInteger userId;
     private String loginId;
