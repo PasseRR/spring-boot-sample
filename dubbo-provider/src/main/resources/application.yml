@@ -4,3 +4,4 @@ spring:
     registry: zookeeper://localhost:2181
     # default dubbo
     protocol: dubbo
+    timeout: 9999

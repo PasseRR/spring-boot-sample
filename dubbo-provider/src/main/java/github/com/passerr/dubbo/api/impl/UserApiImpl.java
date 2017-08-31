@@ -14,7 +14,7 @@ import java.math.BigInteger;
  * @Copyright(c) gome inc Gome Co.,LTD
  */
 @Component
-@Service(interfaceClass = UserApi.class, timeout = 10000)
+@Service(interfaceClass = UserApi.class)
 public class UserApiImpl implements UserApi {
     @Override
     public ResponseVo<BigInteger> addUser(UserVo userVo) {
