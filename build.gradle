@@ -12,8 +12,9 @@ allprojects {
         SpringBootVersion = '1.5.2.RELEASE'
         LombokVersion = '1.16.8'
         SpockVersion = '1.1-groovy-2.4-rc-4'
-        DubboVersion = '2.5.4-SNAPSHOT'
+        DubboVersion = '2.5.3'
         DubboStarterVersion = '1.0.0-SNAPSHOT'
+        ZkClientVersion = '0.4'
     }
     // java编译的时候缺省状态下会因为中文字符而失败
     [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
@@ -23,6 +24,7 @@ allprojects {
 
     repositories {
         maven { url 'http://repo1.maven.org/maven2' }
+        maven { url 'http://10.128.11.68:8081/nexus/content/groups/public' }
         mavenCentral()
         jcenter()
     }
