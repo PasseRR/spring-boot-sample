@@ -27,6 +27,8 @@ public class DubboProviderConfig {
         ProviderConfig providerConfig = new ProviderConfig();
         // 设置provider统一超时
         providerConfig.setTimeout(this.timeout);
+        // Spring容器初始化完后再暴露服务
+        providerConfig.setDelay(-1);
         /**
          * 设置参数校验、异常处理filter
          * @see github.com.passerr.dubbo.filter.ValidationFilter
