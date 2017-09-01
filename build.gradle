@@ -15,6 +15,7 @@ allprojects {
         DubboVersion = '2.5.3'
         DubboStarterVersion = '1.0.0-SNAPSHOT'
         ZkClientVersion = '0.4'
+        MotanVersion = '0.3.1'
     }
     // java编译的时候缺省状态下会因为中文字符而失败
     [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
