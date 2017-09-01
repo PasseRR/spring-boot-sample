@@ -1,0 +1,20 @@
+server:
+  # 端口
+  port: 83
+
+spring:
+  motan:
+    annotation:
+      package: github.com.passerr.motan.api.impl
+    registry:
+      name: motan-server-registry
+      regProtocol: zookeeper
+      address: 127.0.0.1:2181
+    protocol:
+      motan:
+        id: motan
+        name: motan
+      restful:
+        id: restful
+        name: restful
+    basic-service:

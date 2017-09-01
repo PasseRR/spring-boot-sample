@@ -1,0 +1,7 @@
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+	<logger name="org.springframework" level="ERROR"/>
+	<logger name="com.weibo" level="ERROR"/>
+	<logger name="org.apache.zookeeper" level="ERROR"/>
+    <logger name="github.com.passerr.motan" level="DEBUG"/>
+</configuration>
