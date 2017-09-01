@@ -6,3 +6,5 @@ spring:
   dubbo:
     appname: dubbo-consumer
     registry: zookeeper://192.168.99.1:2181
+    shutdown:
+      timeout: 60000
