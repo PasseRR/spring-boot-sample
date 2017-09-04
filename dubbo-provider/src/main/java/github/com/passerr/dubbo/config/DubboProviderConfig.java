@@ -34,7 +34,7 @@ public class DubboProviderConfig {
          * @see github.com.passerr.dubbo.filter.ValidationFilter
          * @see github.com.passerr.dubbo.filter.DubboExceptionFilter
          */
-        providerConfig.setFilter("validationFilter,exceptionFilter");
+//        providerConfig.setFilter("validationFilter,exceptionFilter");
         // 优雅停机超时时间
         Map<String, String> parameters = new HashMap<>();
         parameters.put("shutdown.timeout", String.valueOf(this.shutdown.get("timeout")));
