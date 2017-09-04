@@ -7,6 +7,6 @@ dependencies {
 //    compile "com.weibo:motan-core:$MotanVersion"
     // Motan协议包
 //    compile "com.weibo:motan-protocol-restful:$MotanVersion"
-    compile "javax.ws.rs:javax.ws.rs-api:2.0.1"
+//    compile "javax.ws.rs:javax.ws.rs-api:2.0.1"
     compileOnly "org.projectlombok:lombok:$LombokVersion"
 }
