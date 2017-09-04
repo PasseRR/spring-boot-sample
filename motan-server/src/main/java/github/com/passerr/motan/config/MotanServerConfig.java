@@ -6,7 +6,6 @@ import com.weibo.api.motan.config.springsupport.BasicServiceConfigBean;
 import com.weibo.api.motan.config.springsupport.ProtocolConfigBean;
 import com.weibo.api.motan.config.springsupport.RegistryConfigBean;
 import com.weibo.api.motan.util.MotanSwitcherUtil;
-import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +16,6 @@ import org.springframework.context.annotation.Configuration;
  * @Copyright(c) gome inc Gome Co.,LTD
  */
 @Configuration
-@Setter
 public class MotanServerConfig {
     @Bean
     public AnnotationBean annotationBean(AnnotationBeanProperties annotationBeanProperties) {
