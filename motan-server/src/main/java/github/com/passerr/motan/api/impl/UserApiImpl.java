@@ -21,6 +21,17 @@ import java.math.BigInteger;
 @Path("/user")
 @Produces(MediaType.APPLICATION_JSON)
 public class UserApiImpl implements UserApi {
+    @Override
+    @GET
+    @Path("/{userId}")
+    public ResponseVo<UserVo> getUser(@PathParam("userId") BigInteger userId) {
+        UserVo userVo = new UserVo();
+        userVo.setUserId(userId);
+        userVo.setUserName("test");
+        userVo.setAge(11);
+        return ResponseVo.ok(userVo);
+    }
+
     @POST
     @Override
     public ResponseVo<BigInteger> addUser(UserVo userVo) {

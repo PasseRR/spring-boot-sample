@@ -11,6 +11,8 @@ import java.math.BigInteger;
  * @Copyright(c) gome inc Gome Co.,LTD
  */
 public interface UserApi {
+    ResponseVo<UserVo> getUser(BigInteger userId);
+
     ResponseVo<BigInteger> addUser(UserVo userVo);
 
     ResponseVo<Boolean> modifyUser(UserVo userVo);
