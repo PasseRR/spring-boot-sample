@@ -1,7 +1,6 @@
 package github.com.passerr.motan.config;
 
 import com.weibo.api.motan.common.MotanConstants;
-import com.weibo.api.motan.config.RegistryConfig;
 import com.weibo.api.motan.config.springsupport.AnnotationBean;
 import com.weibo.api.motan.config.springsupport.BasicServiceConfigBean;
 import com.weibo.api.motan.config.springsupport.ProtocolConfigBean;
@@ -25,11 +24,12 @@ public class MotanServerConfig {
         return annotationBeanProperties;
     }
 
-    @Bean
+    @Bean("registry")
     public RegistryConfigBean registryConfig(RegistryConfigProperties registryConfigProperties) {
         if (!"local".equals(registryConfigProperties.getRegProtocol())) {
             MotanSwitcherUtil.setSwitcherValue(MotanConstants.REGISTRY_HEARTBEAT_SWITCHER, true);
         }
+
         return registryConfigProperties;
     }
 
@@ -48,11 +48,13 @@ public class MotanServerConfig {
         return protocolConfigProperties;
     }
 
-    @Bean
-    public BasicServiceConfigBean basicServiceConfigBean(
-        BasicServiceConfigBeanProperties basicServiceConfigBeanProperties,
-        RegistryConfig registryConfig) {
-        basicServiceConfigBeanProperties.setRegistry(registryConfig);
+    // 在Service中指定基本配置 否则指定export
+    @Bean("basicService")
+    public BasicServiceConfigBean basicServiceConfigBean(BasicServiceConfigBeanProperties basicServiceConfigBeanProperties) {
+        basicServiceConfigBeanProperties.setRegistry("registry");
+        // 默认暴露端口 如果增加或减少 在@MotanService配置
+        basicServiceConfigBeanProperties.setExport("restful:8801,motan:8802");
+
         return basicServiceConfigBeanProperties;
     }
 }

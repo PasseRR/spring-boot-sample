@@ -17,7 +17,7 @@ import java.math.BigInteger;
  * @Copyright(c) gome inc Gome Co.,LTD
  */
 @Component
-@MotanService(interfaceClass = UserApi.class, export = "motan:8801,restful:8802")
+@MotanService(basicService = "basicService")
 @Path("/user")
 @Produces(MediaType.APPLICATION_JSON)
 public class UserApiImpl implements UserApi {
