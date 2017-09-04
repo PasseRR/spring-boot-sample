@@ -4,19 +4,19 @@ server:
 
 spring:
   motan:
+    # 扫描Motan注解包
     annotation:
       package: github.com.passerr.motan.api.impl
+      # 多包扫描
+      # pakcages:
+      # - package1
+      # - package2
+    # 注册中心配置
     registry:
       name: motan-server-registry
       regProtocol: zookeeper
       address: 127.0.0.1:2181
-    protocol:
-      motan:
-        id: motan
-        name: motan
-      restful:
-        id: restful
-        name: restful
+    # 服务端共同配置
     basic-service:
         application: motan-server-demo
         check: true

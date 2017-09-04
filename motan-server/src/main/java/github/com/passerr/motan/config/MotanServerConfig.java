@@ -34,18 +34,22 @@ public class MotanServerConfig {
     }
 
     @Bean("motan")
-    @ConfigurationProperties(prefix = "spring.motan.protocol.motan")
     public ProtocolConfigBean motan() {
-        return new ProtocolConfigProperties();
+        ProtocolConfigBean protocolConfigBean = new ProtocolConfigBean();
+        protocolConfigBean.setId("motan");
+        protocolConfigBean.setName("motan");
+
+        return protocolConfigBean;
     }
 
     @Bean("restful")
-    @ConfigurationProperties(prefix = "spring.motan.protocol.restful")
     public ProtocolConfigBean restful() {
-        ProtocolConfigProperties protocolConfigProperties = new ProtocolConfigProperties();
-        protocolConfigProperties.setEndpointFactory("netty");
+        ProtocolConfigBean protocolConfigBean = new ProtocolConfigBean();
+        protocolConfigBean.setId("restful");
+        protocolConfigBean.setName("restful");
+        protocolConfigBean.setEndpointFactory("netty");
 
-        return protocolConfigProperties;
+        return protocolConfigBean;
     }
 
     // 在Service中指定基本配置 否则指定export
@@ -68,11 +72,6 @@ class AnnotationBeanProperties extends AnnotationBean {
 @Configuration
 @ConfigurationProperties(prefix = "spring.motan.registry")
 class RegistryConfigProperties extends RegistryConfigBean {
-
-}
-
-@Configuration
-class ProtocolConfigProperties extends ProtocolConfigBean {
 
 }
 
