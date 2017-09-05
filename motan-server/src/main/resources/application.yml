@@ -8,9 +8,7 @@ spring:
     annotation:
       package: github.com.passerr.motan.api.impl
       # 多包扫描
-      # pakcages:
-      # - package1
-      # - package2
+      # pakcage: package1,package2
     # 注册中心配置
     registry:
       name: motan-server-registry
