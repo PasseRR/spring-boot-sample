@@ -17,6 +17,7 @@ spring:
     # 服务端共同配置
     basic-service:
         application: motan-server-demo
+        group: motan-demo
         check: true
         accessLog: false
         requestTimeout: 10000

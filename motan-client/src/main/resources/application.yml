@@ -15,6 +15,7 @@ spring:
     # 客户端共同配置
     basic-referer:
         application: motan-client-demo
+        group: motan-demo
         check: true
         accessLog: false
         retries: 0
