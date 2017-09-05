@@ -56,6 +56,8 @@ public class MotanServerConfig {
         basicServiceConfigBeanProperties.setRegistry("registry");
         // 默认暴露端口 如果增加或减少 在@MotanService配置
         basicServiceConfigBeanProperties.setExport("restful:8801,motan:8802");
+        // 共享端口的service需要配置shareChannel=true
+        basicServiceConfigBeanProperties.setShareChannel(true);
 
         return basicServiceConfigBeanProperties;
     }
