@@ -4,4 +4,4 @@ include 'dubbo-provider'
 include 'dubbo-consumer'
 include 'motan-api'
 include 'motan-server'
-
+include 'motan-client'

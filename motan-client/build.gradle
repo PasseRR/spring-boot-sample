@@ -1,0 +1,21 @@
+group 'github.com.passerr'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+configurations {
+    // 全局排除slf4j-log4j12依赖 与spring-boot logback冲突
+    compile.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+}
+
+dependencies {
+    compile project(':motan-api')
+
+    compile "org.springframework.boot:spring-boot-starter-web:$SpringBootVersion"
+    compile "org.springframework.boot:spring-boot-configuration-processor:1.5.6.RELEASE"
+    compile "com.weibo:motan-core:$MotanVersion"
+    compile "com.weibo:motan-registry-zookeeper:$MotanVersion"
+    compile "com.weibo:motan-transport-netty:$MotanVersion"
+    compile "com.weibo:motan-springsupport:$MotanVersion"
+}

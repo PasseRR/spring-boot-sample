@@ -1,0 +1,20 @@
+server:
+  # 端口
+  port: 84
+
+spring:
+  motan:
+    # 扫描Motan注解包
+    annotation:
+      package: github.com.passerr.motan.controller
+    # 注册中心配置
+    registry:
+      name: motan-server-registry
+      regProtocol: zookeeper
+      address: 127.0.0.1:2181
+    # 客户端共同配置
+    basic-referer:
+        application: motan-client-demo
+        check: true
+        accessLog: false
+        retries: 0
